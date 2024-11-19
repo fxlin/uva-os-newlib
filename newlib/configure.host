@@ -457,6 +457,11 @@ case "${host}" in
 	  have_crt0="no"
 	fi
 	;;
+  aarch64-*-*)			# xzl. can include/exclude specific dir here
+	have_crt0="no"
+	#posix_dir=posix		# waitpid, popen, etc. requires to define "dirent" etc
+	#unix_dir=unix
+	;;	
   bfin-*-*)
 	sys_dir=
 	;;
