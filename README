@@ -1,4 +1,26 @@
-		   README for GNU development tools
+slightly customized for UVA-OS
+
+
+git clone git@github.com:fxlin/uva-os-newlib.git newlib
+
+
+
+cd newlib
+mkdir build && cd build
+
+# Build newlib 
+CC='aarch64-linux-gnu-gcc-9' ../newlib/configure --host=aarch64-linux-gnu \
+    --disable-multilib \
+    --disable-newlib-iconv
+make -j4
+
+# Build libgloss
+CFLAGS=-I'../newlib/libc/include' CC='aarch64-linux-gnu-gcc-9' ../libgloss/configure --host=aarch64-linux-gnu
+make -j4
+
+---------------------------------------
+
+README for GNU development tools
 
 This directory contains various GNU compilers, assemblers, linkers, 
 debuggers, etc., plus their support routines, definitions, and documentation.
