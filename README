@@ -1,6 +1,8 @@
 slightly customized for UVA-OS
 
 
+sudo apt install texinfo
+
 git clone git@github.com:fxlin/uva-os-newlib.git newlib
 
 
@@ -12,10 +14,6 @@ mkdir build && cd build
 CC='aarch64-linux-gnu-gcc-9' ../newlib/configure --host=aarch64-linux-gnu \
     --disable-multilib \
     --disable-newlib-iconv
-make -j4
-
-# Build libgloss
-CFLAGS=-I'../newlib/libc/include' CC='aarch64-linux-gnu-gcc-9' ../libgloss/configure --host=aarch64-linux-gnu
 make -j4
 
 ---------------------------------------
