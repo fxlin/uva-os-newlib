@@ -1,12 +1,13 @@
-slightly customized for UVA-OS
+Slightly customized for UVA-OS 
 
-
-sudo apt install texinfo
-
+GET THE CODE
+# if you haven't done so: 
 git clone git@github.com:fxlin/uva-os-newlib.git newlib
 
+PREREQUISITES
+sudo apt install texinfo
 
-
+BUILD 
 cd newlib
 mkdir build && cd build
 
